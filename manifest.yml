@@ -1,0 +1,20 @@
+--- 
+applications: 
+  .: 
+    name: iatblog
+    framework: 
+      name: node
+      info: 
+        mem: 64M
+        description: Node.js Application
+        exec: 
+    url: ${name}.${target-base}
+    mem: 512M
+    instances: 1
+    services: 
+      mongodb-iatblog: 
+        type: mongodb
+      mysql-iatblog: 
+        type: mysql
+      redis-iatblog: 
+        type: redis

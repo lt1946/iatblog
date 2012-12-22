@@ -63,8 +63,9 @@ app.dynamicHelpers({
       return null;
   },
 });
-
 if (!module.parent) {
-  app.listen(3000);
+// var host = (process.env.VCAP_APP_HOST || 'localhost');
+  var port = (process.env.VMC_APP_PORT || 3000);
+  app.listen(port);
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 }
